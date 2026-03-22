@@ -12,6 +12,7 @@ class Bullet {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
+    
     BulletType type;
     float speed;
     sf::Vector2f direction;

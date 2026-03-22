@@ -7,6 +7,7 @@ class Player {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
+    
     float speed;
     int health;
     int maxHealth;
@@ -30,9 +31,14 @@ public:
     // Health methods
     void takeDamage(int damage);
     void heal(int amount);
+    void setMaxHealth(int maxHealth);
     int getHealth() const;
     int getMaxHealth() const;
     bool isAlive() const;
+    
+    // Combat methods
+    void setFireRate(float rate);
+    float getFireRate() const;
     
     // Position methods
     sf::Vector2f getPosition() const;
@@ -40,6 +46,10 @@ public:
     
     // Rendering
     void render(sf::RenderWindow& window);
+    
+    // Texture management
+    void setTexture(const std::string& texturePath);
+    bool loadTexture(const std::string& texturePath);
     
     // Bounds for collision detection
     sf::FloatRect getBounds() const;

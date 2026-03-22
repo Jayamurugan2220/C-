@@ -13,6 +13,7 @@ class Enemy {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
+    
     EnemyType type;
     float speed;
     int health;
@@ -55,6 +56,14 @@ public:
     
     // Get sprite for collision detection
     sf::Sprite getSprite() const;
+    
+    // Texture management
+    void setTexture(const std::string& texturePath);
+    bool loadTexture(const std::string& texturePath);
+    
+    // Speed management
+    void setSpeed(float speed);
+    float getSpeed() const;
     
     // Score value when destroyed
     int getScoreValue() const;
